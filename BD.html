@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! 💌</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Arial', sans-serif; background: linear-gradient(135deg, #ff9a9e, #fecfef); height: 100vh; display: flex; justify-content: center; align-items: center; overflow-x: hidden; }
+        .welcome { text-align: center; animation: fadeIn 2s ease-in; }
+        .welcome h1 { font-size: 3em; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin-bottom: 20px; }
+        .open-btn { background: #ff6b9d; color: white; border: none; padding: 15px 30px; font-size: 1.2em; border-radius: 50px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 15px rgba(255,107,157,0.4); }
+        .open-btn:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(255,107,157,0.6); }
+        .letter-container { display: none; height: 100vh; overflow-y: auto; padding: 20px; background: #fff; border-radius: 20px; max-width: 800px; margin: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .letter { background: linear-gradient(45deg, #ffeaa7, #fab1a0); padding: 40px; border-radius: 15px; text-align: center; margin-bottom: 40px; opacity: 0; transform: translateY(50px); animation: slideIn 1s ease forwards; }
+        .letter h2 { font-size: 2.5em; color: #2d3436; margin-bottom: 20px; }
+        .letter p { font-size: 1.2em; line-height: 1.6; color: #636e72; }
+        /* Timeline Styles [page:1] */
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+        .timeline::after { content: ''; position: absolute; width: 6px; background: linear-gradient(to bottom, #ff9a9e, #fecfef); top: 0; bottom: 0; left: 50%; margin-left: -3px; }
+        .container { padding: 10px 40px; position: relative; background: inherit; width: 50%; }
+        .container img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 10px; }
+        .container::after { content: ''; position: absolute; width: 25px; height: 25px; right: -17px; background: #ff6b9d; border: 4px solid #ffeaa7; top: 15px; border-radius: 50%; z-index: 1; }
+        .left { left: 0; }
+        .right { left: 50%; }
+        .left::before { content: ' '; height: 0; position: absolute; top: 22px; width: 0; z-index: 1; right: 30px; border: medium solid #ff9a9e; border-width: 10px 0 10px 10px; border-color: transparent transparent transparent #ff9a9e; }
+        .right::before { content: ' '; height: 0; position: absolute; top: 22px; width: 0; z-index: 1; left: 30px; border: medium solid #ff9a9e; border-width: 10px 10px 10px 0; border-color: transparent #ff9a9e transparent transparent; }
+        .right::after { left: -16px; }
+        .content { padding: 20px 30px; background: white; position: relative; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); opacity: 0; animation: fadeInUp 0.8s ease forwards; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @media screen and (max-width: 600px) { .timeline::after { left: 31px; } .container { width: 100%; padding-left: 70px; padding-right: 25px; } .right { left: 0%; } }
+    </style>
+</head>
+<body>
+    <div class="welcome">
+        <h1>Happy Birthday, [Friend's Name]! 🎉</h1>
+        <button class="open-btn" onclick="openLetter()">Open Your Special Letter 💌</button>
+    </div>
+    <div id="letterContainer" class="letter-container">
+        <div class="letter">
+            <h2>Dear [Friend's Name],</h2>
+            <p>Happy Birthday! These 4 years of engineering with you have been unforgettable. From late-night study sessions to project deadlines, you've made every moment special. Here's to more adventures!</p>
+            <p>With love, [Your Name]</p>
+        </div>
+        <div class="timeline">
+            <!-- Year 1 Memory - Left -->
+            <div class="container left">
+                <img src="https://via.placeholder.com/400x200/ff9a9e/fff?text=Year+1+Photo" alt="Year 1">
+                <div class="content">
+                    <h2>Year 1 (2023)</h2>
+                    <p>Our first day in college—nervous but excited! Remember that group project where we pulled an all-nighter?</p>
+                </div>
+            </div>
+            <!-- Year 2 Memory - Right -->
+            <div class="container right">
+                <img src="https://via.placeholder.com/400x200/fecfef/fff?text=Year+2+Photo" alt="Year 2">
+                <div class="content">
+                    <h2>Year 2 (2024)</h2>
+                    <p>Festivals and fun trips. That time we won the coding hackathon together!</p>
+                </div>
+            </div>
+            <!-- Add more for Year 3 & 4 similarly -->
+            <!-- Year 3 Left -->
+            <div class="container left">
+                <img src="https://via.placeholder.com/400x200/ff9a9e/fff?text=Year+3+Photo" alt="Year 3">
+                <div class="content">
+                    <h2>Year 3 (2025)</h2>
+                    <p>Internships and tough exams. Your support meant everything.</p>
+                </div>
+            </div>
+            <!-- Year 4 Right -->
+            <div class="container right">
+                <img src="https://via.placeholder.com/400x200/fecfef/fff?text=Year+4+Photo" alt="Year 4">
+                <div class="content">
+                    <h2>Year 4 (2026)</h2>
+                    <p>Final year vibes! Can't wait for graduation. Love our memories forever. 💕</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openLetter() {
+            document.querySelector('.welcome').style.display = 'none';
+            document.getElementById('letterContainer').style.display = 'block';
+            document.body.style.height = 'auto';
+        }
+    </script>
+</body>
+</html>
